@@ -45,9 +45,13 @@
 		@apply font-speziaMono text-[1.875rem] font-medium leading-[100%] underline tracking-[-0.0375rem] uppercase md:text-[2rem] md:no-underline md:tracking-[0.04rem] lg:text-[3.5rem] lg:leading-[110%] lg:tracking-[0.035rem];
 	}
 	.button-display, .badge {
-		@apply font-speziaMono text-[0.875rem] font-medium leading-[1.75rem] tracking-[0.035rem] uppercase md:text-[0.9375rem] md:tracking-[0.0375rem] lg:text-[2.5rem] lg:tracking-[-0.05rem];
+		@apply font-speziaMono text-[0.875rem] font-medium leading-[1.75rem] tracking-[0.035rem] uppercase md:text-[0.9375rem] md:tracking-[0.0375rem];
 	}
 	.button-default {
 		@apply font-manrope text-[1rem] font-semibold leading-[100%] underline md:text-[1.125rem];
 	}
+}
+
+* {
+	scroll-behavior: smooth;
 }

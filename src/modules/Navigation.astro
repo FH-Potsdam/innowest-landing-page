@@ -2,9 +2,11 @@
 import type { HTMLAttributes } from "astro/types";
 import { cva, type VariantProps } from "cva";
 import Type2 from "../components/Shapes/Evolution/02/Type2.astro";
+import NavItem from "../components/NavItem.astro";
+import Button from "../components/Button.astro";
 
 const navigation = cva({
-	base: "flex py-6 px-12 justify-between",
+	base: "flex py-6 px-12 justify-between flex-wrap",
 	// **or**
 	// base: ["font-semibold", "border", "rounded"],
 	variants: {
@@ -19,6 +21,30 @@ const navigation = cva({
 	},
 });
 
+const shape = new Map([
+	[
+		"default",
+		{
+			innerShape: "text-white",
+			outerShape: "text-black",
+		},
+	],
+	[
+		"coloured",
+		{
+			innerShape: "text-white",
+			outerShape: "text-black",
+		},
+	],
+	[
+		"black",
+		{
+			innerShape: "text-black",
+			outerShape: "text-white",
+		},
+	],
+]);
+
 export interface Props
 	extends HTMLAttributes<"button">,
 		VariantProps<typeof navigation> {}
@@ -26,9 +52,18 @@ export interface Props
 const { colour = "default" } = Astro.props;
 ---
 
-<div class={navigation({ colour })}>
-	<div class="flex gap-4">
-		<Type2 />
+<div class={navigation({ colour })} id="top">
+	<div class="flex flex-wrap items-center gap-4">
+		<Type2
+			class="h-4 w-4"
+			innerShape={shape.get(colour)!.innerShape}
+			outerShape={shape.get(colour)!.outerShape}
+		/>
+		<NavItem href="#" colour="white">Home</NavItem>
+		<NavItem href="#" colour="white">Home 2</NavItem>
+		<NavItem href="#" colour="white">Home 3</NavItem>
 	</div>
-	<div></div>
+	<Button variant="filled" size={800} colour="white" href="#"
+		>Launch Application</Button
+	>
 </div>

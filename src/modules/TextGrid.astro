@@ -1,0 +1,80 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Image } from "astro:assets";
+import { cva, type VariantProps } from "cva";
+import Media from "./Media.astro";
+import cImage from "../assets/c-image.png";
+
+const textGrid = cva({
+	base: "pt-12 px-12 pb-[120px] default-grid",
+	// **or**
+	// base: ["font-semibold", "border", "rounded"],
+	variants: {
+		colour: {
+			default: "bg-white text-black",
+			coloured: "bg-set-1-500 text-white",
+			black: "bg-black text-white",
+		},
+		variant: {
+			image: "",
+			textOnly: "",
+		},
+	},
+	defaultVariants: {
+		colour: "default",
+	},
+});
+
+export interface Props
+	extends HTMLAttributes<"button">,
+		VariantProps<typeof textGrid> {}
+
+const { colour = "default" } = Astro.props;
+---
+
+<div class={textGrid({ colour })}>
+	<div class="col-span-2 flex flex-col gap-6 md:col-span-4 lg:col-span-3">
+		<Media fullWidth>
+			<Image src={cImage} alt="Template Image" />
+		</Media>
+		<h4 class="headline-h6">1. Headline</h4>
+		<p class="copy-500">
+			MOSIDI aims to make data of Brandenburg visible to experts as well
+			as its own population – in an easy, efficient way. MOSIDI aims to
+			make data of Brandenburg visible to experts.
+		</p>
+	</div>
+	<div class="col-span-2 flex flex-col gap-6 md:col-span-4 lg:col-span-3">
+		<Media fullWidth>
+			<Image src={cImage} alt="Template Image" />
+		</Media>
+		<h4 class="headline-h6">1. Headline</h4>
+		<p class="copy-500">
+			MOSIDI aims to make data of Brandenburg visible to experts as well
+			as its own population – in an easy, efficient way. MOSIDI aims to
+			make data of Brandenburg visible to experts.
+		</p>
+	</div>
+	<div class="col-span-2 flex flex-col gap-6 md:col-span-4 lg:col-span-3">
+		<Media fullWidth>
+			<Image src={cImage} alt="Template Image" />
+		</Media>
+		<h4 class="headline-h6">1. Headline</h4>
+		<p class="copy-500">
+			MOSIDI aims to make data of Brandenburg visible to experts as well
+			as its own population – in an easy, efficient way. MOSIDI aims to
+			make data of Brandenburg visible to experts.
+		</p>
+	</div>
+	<div class="col-span-2 flex flex-col gap-6 md:col-span-4 lg:col-span-3">
+		<Media fullWidth>
+			<Image src={cImage} alt="Template Image" />
+		</Media>
+		<h4 class="headline-h6">1. Headline</h4>
+		<p class="copy-500">
+			MOSIDI aims to make data of Brandenburg visible to experts as well
+			as its own population – in an easy, efficient way. MOSIDI aims to
+			make data of Brandenburg visible to experts.
+		</p>
+	</div>
+</div>

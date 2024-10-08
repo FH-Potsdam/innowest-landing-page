@@ -1,0 +1,31 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cva, type VariantProps } from "cva";
+
+const textBadge = cva({
+	base: "inline-flex border border-black",
+	variants: {
+		form: {
+			badge: "rounded",
+			pill: "rounded-lg",
+		},
+		size: {
+			200: "h-8 px-3 py-0.5",
+			500: "h-11",
+		},
+	},
+	defaultVariants: {
+		form: "badge",
+	},
+});
+
+export interface Props
+	extends HTMLAttributes<"p">,
+		VariantProps<typeof textBadge> {}
+
+const { form = "badge", size = 200 } = Astro.props;
+---
+
+<div class={textBadge({ form, size })}>
+	<p class="badge"><slot /></p>
+</div>
