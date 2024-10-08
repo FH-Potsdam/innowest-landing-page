@@ -48,7 +48,12 @@ export default {
 		},
 		fontFamily: {
 			manrope: ["Manrope Variable", "sans-serif"],
-		}
+			speziaMono: ["Spezia Mono", "monospace"],
+		},
+		screens: {
+			md: "768px",
+			lg: "1024px",
+		},
 	},
 	plugins: [],
 };
