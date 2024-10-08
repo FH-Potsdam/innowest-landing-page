@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Default from "../layouts/Default.astro";
 import CopyHighlight from "../modules/CopyHighlight.astro";
 import Footer from "../modules/Footer.astro";
@@ -7,11 +8,15 @@ import InlineDecoration from "../modules/InlineDecoration.astro";
 // import Navigation from "../modules/Navigation.astro";
 import Stage from "../modules/Stage.astro";
 import TextGrid from "../modules/TextGrid.astro";
+
+import cImage from "../assets/c-image.png";
 ---
 
 <Default title="Mosidi" description="Landing Page">
 	<!-- <Navigation /> -->
-	<Stage colour="default" />
+	<Stage colour="default">
+		<Image src={cImage} alt="Template Image" slot="media" />
+	</Stage>
 	<HeadlineHighlight />
 	<TextGrid />
 	<CopyHighlight />

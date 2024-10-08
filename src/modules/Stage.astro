@@ -4,9 +4,10 @@ import { cva, type VariantProps } from "cva";
 import TextIntro from "../components/TextIntro.astro";
 import Type2 from "../components/Shapes/Evolution/03/Type2.astro";
 import Type3 from "../components/Shapes/Evolution/03/Type3.astro";
+import Media from "./Media.astro";
 
 const stage = cva({
-	base: "flex pt-12 px-12 pb-[120px] justify-between md:flex-row flex-col relative gap-8",
+	base: "flex pt-12 px-12 pb-[120px] justify-between flex-col relative gap-8",
 	// **or**
 	// base: ["font-semibold", "border", "rounded"],
 	variants: {
@@ -33,7 +34,9 @@ const { colour = "default" } = Astro.props;
 ---
 
 <div class={stage({ colour })}>
-	<div class="flex md:flex-col md:absolute top-0 right-0 md:p-[inherit]">
+	<div
+		class="flex md:flex-col md:absolute top-0 right-0 md:p-[inherit] md:w-[235px] lg:w-[336px]"
+	>
 		<Type2 />
 		<Type3 />
 	</div>
@@ -41,4 +44,7 @@ const { colour = "default" } = Astro.props;
 		headerClass="lg:col-start-1 lg:col-end-8 col-span-full md:col-start-1 md:col-end-5"
 		paragraphClass="lg:col-start-1 lg:col-end-6 col-span-full md:col-start-1 md:col-end-5"
 	/>
+	<Media class="col-span-full" fullWidth>
+		<slot name="media" />
+	</Media>
 </div>
