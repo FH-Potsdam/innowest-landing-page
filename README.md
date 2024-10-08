@@ -1,6 +1,6 @@
 # innowest-landing-page
-landing page for innowest tv4's projects
 
+landing page for innowest tv4's projects
 
 ## 🚀 Project Structure
 
