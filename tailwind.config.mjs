@@ -46,6 +46,9 @@ export default {
 				},
 			},
 		},
+		fontFamily: {
+			manrope: ["Manrope Variable", "sans-serif"],
+		}
 	},
 	plugins: [],
 };

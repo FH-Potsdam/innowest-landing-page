@@ -1,4 +1,6 @@
 ---
+import "@fontsource-variable/manrope";
+
 interface Props {
 	title: string;
 	description: string;
@@ -13,7 +15,7 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<main>
+		<main class="font-manrope">
 			<slot />
 		</main>
 	</body>
