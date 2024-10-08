@@ -1,0 +1,44 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { cva, type VariantProps } from "cva";
+import TextIntro from "../components/TextIntro.astro";
+import Type2 from "../components/Shapes/Evolution/03/Type2.astro";
+import Type3 from "../components/Shapes/Evolution/03/Type3.astro";
+
+const stage = cva({
+	base: "flex pt-12 px-12 pb-[120px] justify-between md:flex-row flex-col relative gap-8",
+	// **or**
+	// base: ["font-semibold", "border", "rounded"],
+	variants: {
+		colour: {
+			default: "bg-white text-black",
+			coloured: "bg-set-1-200 text-black",
+			black: "bg-black text-white",
+		},
+		variant: {
+			image: "",
+			textOnly: "",
+		},
+	},
+	defaultVariants: {
+		colour: "default",
+	},
+});
+
+export interface Props
+	extends HTMLAttributes<"button">,
+		VariantProps<typeof stage> {}
+
+const { colour = "default" } = Astro.props;
+---
+
+<div class={stage({ colour })}>
+	<div class="flex md:flex-col md:absolute top-0 right-0 md:p-[inherit]">
+		<Type2 />
+		<Type3 />
+	</div>
+	<TextIntro
+		headerClass="lg:col-start-1 lg:col-end-8 col-span-full md:col-start-1 md:col-end-5"
+		paragraphClass="lg:col-start-1 lg:col-end-6 col-span-full md:col-start-1 md:col-end-5"
+	/>
+</div>
