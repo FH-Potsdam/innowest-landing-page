@@ -49,9 +49,9 @@ import FooterLink from "../modules/Footer/FooterLink.astro";
 		>
 	</Navigation>
 	<Stage colour="black">
-		<!-- Fragments are "empty" tags in Astro. 
+		<!-- Fragments are "empty" tags in Astro.
 		 This way, only the content is put
-		 in the <h3> of the header, without 
+		 in the <h3> of the header, without
 		 additional DOM Elements  -->
 		<Fragment slot="header"> Built for individual expertise.</Fragment>
 		<Fragment slot="copy"
@@ -59,7 +59,7 @@ import FooterLink from "../modules/Footer/FooterLink.astro";
 			as its own population – in an easy, efficient way. MOSIDI aims to
 			make data of Brandenburg visible to experts.</Fragment
 		>
-		<Image src={cImage} alt="Template Image" slot="media" />
+		<Image src={cImage} alt="Template Image" slot="media" class="w-full" />
 	</Stage>
 	<HeadlineHighlight colour="coloured" orientation="textLeft">
 		<Fragment slot="headline">
