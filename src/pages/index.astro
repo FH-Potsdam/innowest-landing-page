@@ -28,24 +28,23 @@ import TextBadge from "../components/TextBadge.astro";
 
 // Image/Media Imports
 import cImage from "../assets/c-image.png";
-import innovativeHochschule from "../assets/innovative_hochschule.png";
-import bmfbf from "../assets/bmfbf.png";
-import owk from "../assets/owk.png";
+import innovativeHochschule from "../assets/logo-innovative-hochschule-Initiative-BMBF-GWK-innowest.svg";
+import fhp from "../assets/logo-fhpotsdam-innowest-c-fhpostdam-2016-11-16.svg";
+import thb from "../assets/logo-thbrandenburg-innowest-c-thb-2015-10-05.svg";
+import hnee from "../assets/logo-hne-eberswalde-innowest-c-hne-eberswalde.svg";
 ---
 
 <Default title="MOSIDI" description="Landing Page">
 	<Navigation colour="black">
 		<NavigationItemWrapper colour="black" slot="navigationItemWrapper">
-			<NavItem href="#" colour="white">Home</NavItem>
-			<NavItem href="#" colour="white">Home 2</NavItem>
-			<NavItem href="#" colour="white">Home 3</NavItem>
+			<NavItem href="#" colour="white">Welcome</NavItem>
 		</NavigationItemWrapper>
 		<Button
 			variant="filled"
 			size={800}
 			colour="white"
-			href="#"
-			slot="navigationCTA">Launch Application</Button
+			href="https://tv4-geo.innowest-brandenburg.de/app/"
+			slot="navigationCTA">Prototypen testen</Button
 		>
 	</Navigation>
 	<Stage colour="black">
@@ -53,17 +52,15 @@ import owk from "../assets/owk.png";
 		 This way, only the content is put
 		 in the <h3> of the header, without
 		 additional DOM Elements  -->
-		<Fragment slot="header">Built for individual expertise.</Fragment>
+		<Fragment slot="header">Setze alles auf eine Karte.</Fragment>
 		<Fragment slot="copy"
-			>MOSIDI aims to make data of Brandenburg visible to experts as well
-			as its own population – in an easy, efficient way. MOSIDI aims to
-			make data of Brandenburg visible to experts.</Fragment
+			>Mit MOSIDI einfach Daten von verschiedenen Portalen zusammenführen, mit eigenen Daten verschneiden, auswerten, visualisieren und bereitstellen. Die modulare Open Source-Lösung für eine nachhaltige datenbasierte Kommunalentwicklung.</Fragment
 		>
 		<Image src={cImage} alt="Template Image" slot="media" class="w-full" />
 	</Stage>
 	<HeadlineHighlight colour="coloured" orientation="textLeft">
 		<Fragment slot="headline">
-			For anyone with questions solvable with data.
+			Open Source. Modular. Gemacht für Kommunen.
 		</Fragment>
 	</HeadlineHighlight>
 	<TextGrid colour="coloured">
@@ -106,12 +103,11 @@ import owk from "../assets/owk.png";
 	</TextGrid>
 	<CopyHighlight>
 		<Fragment slot="copy">
-			MOSIDI aims to make data of Brandenburg visible to experts as well
-			as its own population – in an easy, efficient way.
+			MOSIDI wird vom Verbundvorhaben InNoWest mit Brandenburger Kommunen entwickelt. Interesse dabei zu sein? Kontaktieren Sie uns!
 		</Fragment>
 		<CopyHighlightItemWrapper slot="itemWrapper">
-			<TextBadge form="badge">Badge Content</TextBadge>
-			<TextBadge form="pill">Pill Content</TextBadge>
+			<TextBadge form="badge"><a href="https://www.innowest-brandenburg.de">Mehr zum Verbundvorhaben erfahren &raquo;</a></TextBadge>
+			<TextBadge form="badge"><a href="mailto:">Jetzt Kontakt aufnehmen &raquo;</a></TextBadge>
 		</CopyHighlightItemWrapper>
 	</CopyHighlight>
 	<InlineDecoration colour="coloured" />
@@ -120,16 +116,25 @@ import owk from "../assets/owk.png";
 			<FooterFundingLogoContainer slot="fundingLogos">
 				<Image src={innovativeHochschule} alt="Innovative Hochschule" />
 				<Image
-					src={bmfbf}
-					alt="Bundesministerium für Bildung und Forschung"
+					src={fhp}
+					alt="Fachhochschule Potsdam"
 				/>
-				<Image src={owk} alt="OWK" />
+				<Image
+					src={thb}
+					alt="Technische Hochschule Brandenburg"
+					height="39"
+				/>
+				<Image
+					src={hnee}
+					alt="Hochschule für nachhaltige Entwicklung Eberswalde"
+					height="39"
+				/>
 			</FooterFundingLogoContainer>
 		</FooterFundingContainer>
 		<FooterNavigationRow slot="navigationRow">
-			<FooterLink href="#">Nav Item 1</FooterLink>
+			<!-- <FooterLink href="#">Nav Item 1</FooterLink>
 			<FooterLink href="#">Nav Item 2</FooterLink>
-			<FooterLink href="#">Nav Item 3</FooterLink>
+			<FooterLink href="#">Nav Item 3</FooterLink> -->
 		</FooterNavigationRow>
 	</Footer>
 </Default>
