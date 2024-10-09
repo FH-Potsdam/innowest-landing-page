@@ -127,7 +127,7 @@ const { colour = "default", orientation } = Astro.props;
 					: "lg:col-start-6 lg:col-end-13",
 			)}
 		>
-			For anyone with questions solvable with data.
+			<slot name="headline" />
 		</h3>
 	</div>
 </div>

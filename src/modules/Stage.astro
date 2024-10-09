@@ -89,7 +89,7 @@ const { colour = "default" } = Astro.props;
 
 <div class={stage({ colour })}>
 	<div
-		class="right-0 top-0 flex md:absolute md:w-[235px] md:flex-col md:p-[inherit] lg:w-[336px]"
+		class="right-0 top-0 flex md:absolute md:w-[331px] md:flex-col md:p-[inherit]"
 	>
 		<Type2
 			innerShape={shape_1.get(colour)!.innerShape}
@@ -105,7 +105,11 @@ const { colour = "default" } = Astro.props;
 	<TextIntro
 		headerClass="lg:col-start-1 lg:col-end-9 col-span-full md:col-start-1 md:col-end-5"
 		paragraphClass="lg:col-start-1 lg:col-end-7 col-span-full md:col-start-1 md:col-end-5"
-	/>
+	>
+		<slot name="header" slot="header" />
+		<slot name="copy" slot="copy" />
+		<!-- <slot /> -->
+	</TextIntro>
 	<Media class="col-span-full" fullWidth>
 		<slot name="media" />
 	</Media>

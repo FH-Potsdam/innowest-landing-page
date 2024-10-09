@@ -1,25 +1,135 @@
 ---
+// Astro Imports
 import { Image } from "astro:assets";
+
+// Layout Import
 import Default from "../layouts/Default.astro";
-import CopyHighlight from "../modules/CopyHighlight.astro";
-import Footer from "../modules/Footer.astro";
+
+// Module Imports
+import CopyHighlight from "../modules/CopyHighlight/CopyHighlight.astro";
+import Footer from "../modules/Footer/Footer.astro";
 import HeadlineHighlight from "../modules/HeadlineHighlight.astro";
 import InlineDecoration from "../modules/InlineDecoration.astro";
-import Navigation from "../modules/Navigation.astro";
+import Navigation from "../modules/Navigation/Navigation.astro";
 import Stage from "../modules/Stage.astro";
-import TextGrid from "../modules/TextGrid.astro";
+import TextGrid from "../modules/TextGrid/TextGrid.astro";
+import NavigationItemWrapper from "../modules/Navigation/NavigationItemWrapper.astro";
+import CopyHighlightItemWrapper from "../modules/CopyHighlight/CopyHighlightItemWrapper.astro";
+import TextGridItem from "../modules/TextGrid/TextGridItem.astro";
+import FooterFundingContainer from "../modules/Footer/FooterFundingContainer.astro";
+import FooterFundingLogoContainer from "../modules/Footer/FooterFundingLogoContainer.astro";
 
+// Component Imports
+import NavItem from "../components/NavItem.astro";
+import Button from "../components/Button.astro";
+import TextBadge from "../components/TextBadge.astro";
+
+// Image/Media Imports
 import cImage from "../assets/c-image.png";
+import innovativeHochschule from "../assets/innovative_hochschule.png";
+import bmfbf from "../assets/bmfbf.png";
+import owk from "../assets/owk.png";
+import FooterNavigationRow from "../modules/Footer/FooterNavigationRow.astro";
+import FooterLink from "../modules/Footer/FooterLink.astro";
 ---
 
 <Default title="Mosidi" description="Landing Page">
-	<Navigation colour="black" />
+	<Navigation colour="black">
+		<NavigationItemWrapper colour="black" slot="navigationItemWrapper">
+			<NavItem href="#" colour="white">Home</NavItem>
+			<NavItem href="#" colour="white">Home 2</NavItem>
+			<NavItem href="#" colour="white">Home 3</NavItem>
+		</NavigationItemWrapper>
+		<Button
+			variant="filled"
+			size={800}
+			colour="white"
+			href="#"
+			slot="navigationCTA">Launch Application</Button
+		>
+	</Navigation>
 	<Stage colour="black">
+		<!-- Fragments are "empty" tags in Astro. 
+		 This way, only the content is put
+		 in the <h3> of the header, without 
+		 additional DOM Elements  -->
+		<Fragment slot="header"> Built for individual expertise.</Fragment>
+		<Fragment slot="copy"
+			>MOSIDI aims to make data of Brandenburg visible to experts as well
+			as its own population – in an easy, efficient way. MOSIDI aims to
+			make data of Brandenburg visible to experts.</Fragment
+		>
 		<Image src={cImage} alt="Template Image" slot="media" />
 	</Stage>
-	<HeadlineHighlight colour="coloured" orientation="textLeft" />
-	<TextGrid colour="coloured" />
-	<CopyHighlight />
+	<HeadlineHighlight colour="coloured" orientation="textLeft">
+		<Fragment slot="headline">
+			For anyone with questions solvable with data.
+		</Fragment>
+	</HeadlineHighlight>
+	<TextGrid colour="coloured">
+		<TextGridItem>
+			<Image src={cImage} alt="Template Image" slot="media" />
+			<Fragment slot="headline">1. Headline</Fragment>
+			<Fragment slot="copy">
+				MOSIDI aims to make data of Brandenburg visible to experts as
+				well as its own population – in an easy, efficient way. MOSIDI
+				aims to make data of Brandenburg visible to experts.
+			</Fragment>
+		</TextGridItem>
+		<TextGridItem>
+			<Image src={cImage} alt="Template Image" slot="media" />
+			<Fragment slot="headline">2. Headline</Fragment>
+			<Fragment slot="copy">
+				MOSIDI aims to make data of Brandenburg visible to experts as
+				well as its own population – in an easy, efficient way. MOSIDI
+				aims to make data of Brandenburg visible to experts.
+			</Fragment>
+		</TextGridItem>
+		<TextGridItem>
+			<Image src={cImage} alt="Template Image" slot="media" />
+			<Fragment slot="headline">3. Headline</Fragment>
+			<Fragment slot="copy">
+				MOSIDI aims to make data of Brandenburg visible to experts as
+				well as its own population – in an easy, efficient way. MOSIDI
+				aims to make data of Brandenburg visible to experts.
+			</Fragment>
+		</TextGridItem>
+		<TextGridItem>
+			<Image src={cImage} alt="Template Image" slot="media" />
+			<Fragment slot="headline">4. Headline</Fragment>
+			<Fragment slot="copy">
+				MOSIDI aims to make data of Brandenburg visible to experts as
+				well as its own population – in an easy, efficient way. MOSIDI
+				aims to make data of Brandenburg visible to experts.
+			</Fragment>
+		</TextGridItem>
+	</TextGrid>
+	<CopyHighlight>
+		<Fragment slot="copy">
+			MOSIDI aims to make data of Brandenburg visible to experts as well
+			as its own population – in an easy, efficient way.
+		</Fragment>
+		<CopyHighlightItemWrapper slot="itemWrapper">
+			<TextBadge form="badge">Badge Content</TextBadge>
+			<TextBadge form="pill">Pill Content</TextBadge>
+		</CopyHighlightItemWrapper>
+	</CopyHighlight>
 	<InlineDecoration colour="coloured" />
-	<Footer />
+	<Footer>
+		<FooterFundingContainer slot="funding">
+			<FooterFundingLogoContainer slot="fundingLogos">
+				<Image src={innovativeHochschule} alt="Innovative Hochschule" />
+				<Image
+					src={bmfbf}
+					alt="Bundesministerium für Bildung und Forschung"
+				/>
+				<Image src={owk} alt="OWK" />
+			</FooterFundingLogoContainer>
+		</FooterFundingContainer>
+		<FooterNavigationRow slot="navigationRow">
+			<FooterLink href="#">Nav Item 1</FooterLink>
+			<FooterLink href="#">Nav Item 2</FooterLink>
+			<FooterLink href="#">Nav Item 3</FooterLink>
+		</FooterNavigationRow>
+	</Footer>
 </Default>

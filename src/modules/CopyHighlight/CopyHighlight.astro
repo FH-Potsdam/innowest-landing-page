@@ -1,7 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 import { cva, type VariantProps } from "cva";
-import TextBadge from "../components/TextBadge.astro";
 
 const copyHighlight = cva({
 	base: "default-grid py-12 px-12 min-h-[400px] grid-rows-[max-content]",
@@ -26,10 +25,7 @@ const { colour = "default" } = Astro.props;
 
 <div class={copyHighlight({ colour })}>
 	<p class="copy-800 col-span-full flex h-min lg:col-start-1 lg:col-end-11">
-		MOSIDI aims to make data of Brandenburg visible to experts as well as
-		its own population – in an easy, efficient way.
+		<slot name="copy" />
 	</p>
-	<div class="col-span-full h-full">
-		<TextBadge form="pill">Badge Content</TextBadge>
-	</div>
+	<slot name="itemWrapper" />
 </div>

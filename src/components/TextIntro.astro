@@ -10,16 +10,14 @@ export interface Props {
 const { showCopy = true, headerClass, paragraphClass } = Astro.props;
 ---
 
-<div class="default-grid gap-y-12 relative">
+<div class="default-grid relative gap-y-12">
 	<h3 class={cn("copy-1000", headerClass)}>
-		Built for individual expertise.
+		<slot name="header" />
 	</h3>
 	{
 		showCopy && (
-			<p class={cn("max-w-prose copy-700", paragraphClass)}>
-				MOSIDI aims to make data of Brandenburg visible to experts as
-				well as its own population – in an easy, efficient way. MOSIDI
-				aims to make data of Brandenburg visible to experts.
+			<p class={cn("copy-700", paragraphClass)}>
+				<slot name="copy" />
 			</p>
 		)
 	}
