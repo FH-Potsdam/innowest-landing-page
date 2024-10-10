@@ -30,14 +30,20 @@ import TextBadge from "../components/TextBadge.astro";
 import cImage from "../assets/c-image.png";
 import innovativeHochschule from "../assets/logo-innovative-hochschule-Initiative-BMBF-GWK-innowest.svg";
 import fhp from "../assets/logo-fhpotsdam-innowest-c-fhpostdam-2016-11-16.svg";
+import innowest from "../assets/innowest.svg";
 import thb from "../assets/logo-thbrandenburg-innowest-c-thb-2015-10-05.svg";
 import hnee from "../assets/logo-hne-eberswalde-innowest-c-hne-eberswalde.svg";
+import stageImage from "../assets/stage.jpg";
+import teaser1 from "../assets/teaser-sources.jpg";
+import teaser2 from "../assets/teaser-federal.jpg";
+import teaser3 from "../assets/teaser-open.jpg";
+import teaser4 from "../assets/teaser-network.jpg";
 ---
 
 <Default title="MOSIDI" description="Landing Page">
 	<Navigation colour="black">
 		<NavigationItemWrapper colour="black" slot="navigationItemWrapper">
-			<NavItem href="#" colour="white">Welcome</NavItem>
+			<NavItem href="#" colour="white">MOSIDI</NavItem>
 		</NavigationItemWrapper>
 		<Button
 			variant="filled"
@@ -47,7 +53,7 @@ import hnee from "../assets/logo-hne-eberswalde-innowest-c-hne-eberswalde.svg";
 			slot="navigationCTA">Prototypen testen</Button
 		>
 	</Navigation>
-	<Stage colour="black">
+	<Stage colour="coloured">
 		<!-- Fragments are "empty" tags in Astro.
 		 This way, only the content is put
 		 in the <h3> of the header, without
@@ -56,7 +62,7 @@ import hnee from "../assets/logo-hne-eberswalde-innowest-c-hne-eberswalde.svg";
 		<Fragment slot="copy"
 			>Mit MOSIDI einfach Daten von verschiedenen Portalen zusammenführen, mit eigenen Daten verschneiden, auswerten, visualisieren und bereitstellen. Die modulare Open Source-Lösung für eine nachhaltige datenbasierte Kommunalentwicklung.</Fragment
 		>
-		<Image src={cImage} alt="Template Image" slot="media" class="w-full" />
+		<Image src={stageImage} alt="Mockup der MOSIDI Anwendung auf einem Dekstop und einem Smartphone" slot="media" class="w-full" />
 	</Stage>
 	<HeadlineHighlight colour="coloured" orientation="textLeft">
 		<Fragment slot="headline">
@@ -65,39 +71,31 @@ import hnee from "../assets/logo-hne-eberswalde-innowest-c-hne-eberswalde.svg";
 	</HeadlineHighlight>
 	<TextGrid colour="coloured">
 		<TextGridItem>
-			<Image src={cImage} alt="Template Image" slot="media" />
-			<Fragment slot="headline">1. Headline</Fragment>
+			<Image src={teaser1} alt="Logos von Datenbereitsteller:innen" slot="media" />
+			<Fragment slot="headline">Daten zusammenführen</Fragment>
 			<Fragment slot="copy">
-				MOSIDI aims to make data of Brandenburg visible to experts as
-				well as its own population – in an easy, efficient way. MOSIDI
-				aims to make data of Brandenburg visible to experts.
+				MOSIDI führt Daten unterschiedlichster Bereitsteller:innen zusammen. Von kommunalen Bevölkerungsdaten bis hin zu aktuellen Wetter- und Klimadaten.
 			</Fragment>
 		</TextGridItem>
 		<TextGridItem>
-			<Image src={cImage} alt="Template Image" slot="media" />
-			<Fragment slot="headline">2. Headline</Fragment>
+			<Image src={teaser2} alt="Verschiedene föderale Datenebenen" slot="media" />
+			<Fragment slot="headline">Daten verschneiden</Fragment>
 			<Fragment slot="copy">
-				MOSIDI aims to make data of Brandenburg visible to experts as
-				well as its own population – in an easy, efficient way. MOSIDI
-				aims to make data of Brandenburg visible to experts.
+				Die Daten können nicht nur visualisiert sondern auch einfach miteinander verschnitten werden, um neue Analysen und Erktennise zu ermöglichen.
 			</Fragment>
 		</TextGridItem>
 		<TextGridItem>
-			<Image src={cImage} alt="Template Image" slot="media" />
-			<Fragment slot="headline">3. Headline</Fragment>
+			<Image src={teaser3} alt="Logos von Open Source Werkzeugen" slot="media" />
+			<Fragment slot="headline">Offen &amp; Nachhaltig</Fragment>
 			<Fragment slot="copy">
-				MOSIDI aims to make data of Brandenburg visible to experts as
-				well as its own population – in an easy, efficient way. MOSIDI
-				aims to make data of Brandenburg visible to experts.
+				MOSIDI ist Open Source und nutzt Open Source Technologien. Hierdurch sind wir offen für Partner:innen mit Blick auf Wartung und Weiterentwicklung.
 			</Fragment>
 		</TextGridItem>
 		<TextGridItem>
-			<Image src={cImage} alt="Template Image" slot="media" />
-			<Fragment slot="headline">4. Headline</Fragment>
+			<Image src={teaser4} alt="Bild eines Netzwerks" slot="media" />
+			<Fragment slot="headline">Von Kommunen für Kommunen</Fragment>
 			<Fragment slot="copy">
-				MOSIDI aims to make data of Brandenburg visible to experts as
-				well as its own population – in an easy, efficient way. MOSIDI
-				aims to make data of Brandenburg visible to experts.
+				Die Anwendung wird aktuell gemeinsam mit Kommunen entlang realer kommunaler Bedarfe und Herausforderungen entwickelt.
 			</Fragment>
 		</TextGridItem>
 	</TextGrid>
@@ -127,6 +125,11 @@ import hnee from "../assets/logo-hne-eberswalde-innowest-c-hne-eberswalde.svg";
 				<Image
 					src={hnee}
 					alt="Hochschule für nachhaltige Entwicklung Eberswalde"
+					height="39"
+				/>
+				<Image
+					src={innowest}
+					alt="InNoWest"
 					height="39"
 				/>
 			</FooterFundingLogoContainer>
